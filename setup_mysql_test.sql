@@ -4,10 +4,10 @@
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
 
 -- Creates a new user 'hbnb_test'
-CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
+CREATE USER IF NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED BY 'hbnb_test_pwd';
 
 -- Grants all privileges on the database 'hbnb_test_db' to the user 'hbnb_test'
-GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO 'hbnb_dev'@'localhost';
+GRANT ALL PRIVILEGES ON hbnb_test_db.* TO 'hbnb_test'@'localhost';
 
 -- Grants SELECT privileges on the database 'performance_schema' to the user 'hbnb_test'
-GRANT SELECT ON performance_schema.* TO 'hbnb_dev'@'localhost';
+GRANT SELECT ON performance_schema.* TO 'hbnb_test'@'localhost';
