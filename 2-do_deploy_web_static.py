@@ -7,7 +7,10 @@ import re
 
 
 def do_deploy(archive_path):
-    """deploys static files archive into remote servers"""
+    """deploys static files archive into remote servers
+    deploys static files archive into remote servers
+    deploys static files archive into remote servers
+    deploys static files archive into remote servers"""
     l = Context()
     if l.run(f"test -f {archive_path}").failed:
         return False
