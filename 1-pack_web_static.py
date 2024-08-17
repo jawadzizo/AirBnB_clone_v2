@@ -23,5 +23,3 @@ def do_pack():
     short_path = full_path.stdout[index:]
 
     return short_path
-
-do_pack()
