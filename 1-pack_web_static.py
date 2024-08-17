@@ -10,7 +10,7 @@ def do_pack():
     c = Context()
     tar_name = f'web_static_{datetime.now().strftime("%Y%m%d%H%M%S")}.tgz'
 
-    c.run("mkdir versions")
+    c.run("mkdir -p versions")
     with c.cd("web_static"):
         result = c.run(f"tar -cf {tar_name} *")
 
@@ -18,8 +18,10 @@ def do_pack():
         return None
 
     c.run(f"mv web_static/{tar_name} versions")
-    full_path = c.run(f"realpath versions/{tar_name}")
-    index = full_path.output.find("versions")
-    short_path = full_path.output[index:]
+    full_path = c.run(f"realpath versions/{tar_name}", hide=True)
+    index = full_path.stdout.find("versions")
+    short_path = full_path.stdout[index:]
 
     return short_path
+
+do_pack()
