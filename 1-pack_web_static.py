@@ -12,7 +12,7 @@ def do_pack():
 
     c.run("mkdir -p versions")
     with c.cd("web_static"):
-        result = c.run(f"tar -cf {tar_name} *")
+        result = c.run("tar -cf {} *".format(tar_name))
 
     if result.failed:
         return None
